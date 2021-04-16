@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pexeso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="board"></div>
+
+
+<script>
+
+    let cards = ["😂", "🤣", "😅", "🥰", "😈"];
+
+    //let cards = ["A", "B", "C", "D", "E", "F", "G", "H"]
+    let size = cards.length;
+    for (let i = 0; i < size; i++) {
+        cards.push(cards[i]);
+    }
+
+    size = cards.length;
+    let numbers = [];
+    let contains = true;
+    for (let i = 0; numbers.length != 10; i++) {
+        let random = Math.floor(Math.random() * size);
+        for (let j = 0; j < size; j++) {
+            if (numbers.includes(random)) contains = false;
+        }
+        if (contains) {
+            numbers.push(random);
+        }
+        contains = true;
+    }
+    console.log(numbers)
+
+
+    let divAll = document.createElement("div");
+    for (let i = 0; i < size; i++) {
+        let div = document.createElement("div");
+        div.setAttribute("id", "square")
+        div.innerText = cards[numbers[i]];
+        divAll.appendChild(div)
+        divAll.setAttribute("id", "all")
+    }
+    document.getElementById("board").appendChild(divAll);
+
+</script>
+</body>
+</html>
