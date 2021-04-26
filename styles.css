@@ -1,10 +1,69 @@
+@keyframes toForward {
+    0% {
+        transform: rotateY(-180deg);
+        background-color: black;
+    }
+    50%{
+        background-color: black;
+    }
+    100% {
+        transform: rotateY(0deg);
+        background-color: lightgray;
+    }
+}
+
+@keyframes toForwardSpan {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes toBackward {
+    0%{
+        transform: rotateY(0deg);
+        background-color: lightgray;
+
+    }
+    50%{
+        background-color: lightgray;
+
+    }
+    100% {
+        transform: rotateY(-180deg);
+        background-color: black;
+
+    }
+}
+
+@keyframes toBackwardSpan {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    50%{
+        opacity: 1;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+
 #board {
     display: flex;
     margin: auto;
-    min-height: 95vh;
+    min-height: 80vh;
     max-width: 1250px;
     width: 100%;
-
 }
 
 #all {
@@ -15,14 +74,106 @@
     flex-wrap: wrap;
 }
 
-#square {
+#board #all div {
     width: 100px;
     height: 100px;
     margin: 10px;
     font-size: 75px;
+    cursor: pointer;
+}
+
+#board #all div {
+    border: black solid 5px;
+    border-radius: 10%;
+    padding: 40px 10px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.back {
+    background-color: black;
+}
+
+.none {
+    background-color: lightgray;
 }
 
 body {
     background-color: chartreuse;
+}
 
+.backward span {
+    visibility: hidden;
+    animation: toBackwardSpan 500ms linear;
+}
+
+.backwardStart span {
+    visibility: hidden;
+}
+
+.forward span {
+    animation: toForwardSpan 500ms linear;
+
+}
+
+
+
+.forward {
+    background-color: lightgray;
+    transform-origin: center center;
+    animation: toForward 500ms linear;
+}
+
+.backward {
+    background-color: black;
+    transform-origin: center center;
+    animation: toBackward 500ms linear;
+}
+
+.backwardStart {
+    background-color: black;
+
+}
+
+
+.solved {
+    background-color: yellow;
+}
+
+
+.names {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.stop {
+    background-color: chartreuse;
+}
+
+#pla1 {
+    background: chartreuse;
+    height: 100px;
+}
+
+#pla2 {
+    background: chartreuse;
+    height: 100px;
+}
+
+#pla1 span {
+    margin: 10px;
+}
+
+#pla2 span {
+    margin: 10px;
 }
