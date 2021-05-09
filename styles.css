@@ -101,7 +101,7 @@
 }
 
 body {
-    background-color: chartreuse;
+    background-color: #c50028;
 }
 
 .backward span {
@@ -150,23 +150,23 @@ body {
 }
 
 .play {
-    background-color: black;
+    font-weight: bold;
     color: white;
     border-radius: 5px;
     height: 100px;
 }
 
 .stop {
-    background-color: chartreuse;
+    background-color: #c50028;
 }
 
 #pla1 {
-    background: chartreuse;
+    background: #c50028;
     height: 100px;
 }
 
 #pla2 {
-    background: chartreuse;
+    background: #c50028;
     height: 100px;
 }
 
@@ -176,4 +176,36 @@ body {
 
 #pla2 span {
     margin: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: white ;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 40%;
+}
+
+.close {
+    color: darkgray;
+    float: right;
+    font-size: 35px;
+}
+
+.close:hover{
+    color: black;
+    cursor: pointer;
 }
